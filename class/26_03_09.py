@@ -41,11 +41,11 @@ W = np.random.rand(len(X[0])) #가중치 초기화
 np.set_printoptions(precision=3)#소수점 셋째자리 까지의 난수
 
 #퍼셉트론 학습 알고리즘
-def perceptron_fit(X,Y, epchos=10):
+def perceptron_fit(X,Y, epochs=10):
     global W #가중치 업데이트를 위해 전역변수로 선언
     eta = 0.2 #학습률
 
-    for epoch in range(epchos):
+    for epoch in range(epochs):
         print(f"Epoch {epoch+1}")
         for i in range(len(X)):
             predict = step_function(np.dot(X[i], W)) #예측값 계산, np.dot(X[i], W) 는 입력과 가중치의 내적
@@ -60,7 +60,7 @@ def perceptron_predict(X, Y):
         print(x[0], x[1], "->", step_function(np.dot(x, W)))
 
 #실행
-perceptron_fit(X, y, epchos=10)
+perceptron_fit(X, y, epochs=10)
 perceptron_predict(X, y)
 
 
