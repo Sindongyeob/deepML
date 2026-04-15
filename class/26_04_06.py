@@ -35,12 +35,12 @@
 #feature map이 여러개인 경우 box형태로 표현
 
 #convolution 함수
-import tensorflow as tf
-from tensorflow.keras import layers
+#import tensorflow as tf
+#from tensorflow.keras import layers
 #tf.keras.layers.Conv2D(filters, kernel_size, strides=(1, 1), activation=None, input_shape, padding='valid’)
 #filters: 필터의 수, kernel_size: 필터의 크기, strides: 이동 간격, activation: 활성화 함수, input_shape: 입력 데이터 형태, padding: 패딩 방식(valid, same)
 
-layers.Conv2D(10,kernel_size=(3,3),activation='relu',padding='same',input_shape=(28,28,1))
+#layers.Conv2D(10,kernel_size=(3,3),activation='relu',padding='same',input_shape=(28,28,1))
 #--> 필터 10개, 커널 크기 3x3, 활성화 함수 ReLU, 패딩 방식 same, 입력 데이터 형태 28x28x1(흑백 이미지)
 #출력 feature map의 크기는 (28, 28, 10) -> 28x28 크기의 feature map이 10개 생성됨
 #padding이 same이므로 입력과 출력의 공간적 크기가 동일하게 유지됨, valid이면 출력 크기가 (26, 26, 10) -> 커널이 3x3이므로 가장자리 1픽셀씩 제거되어 출력 크기가 감소됨
